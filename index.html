@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Mom and dad checker2</title>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/tabletop.js/1.3.5/tabletop.min.js"></script>
+		<script>
+			$(document).ready(function(){
+				//function to get data from the spreadsheet
+			  var getData = function () {
+			    Tabletop.init({
+			    	"key": '1SFwq4-q1GLQl1hJAzvjK9pjJV82Dodd_2odys49G2VI',
+		       		"callback": processData,
+		        	"simpleSheet": true
+			    });
+			  }
+				var processData = function(data){
+					for(var i=0; i<data.length; i++) {
+						$("<li>").addClass("list").html(data[i].timestamp+" | "+data[i].action1+" | "+data[i].mood+" | "+data[i].extra).appendTo(".main");
+					}
+				};
+
+			  getData();
+
+			});
+		</script>
+		<style>
+		*{
+		  -webkit-touch-callout: none;
+		  -webkit-user-select: none;
+		  -khtml-user-select: none;
+		  -moz-user-select: none;
+		  -ms-user-select: none;
+		  user-select: none;
+		}
+		body {
+			background: linear-gradient(#00e6e6, #1a0008);
+			background-repeat: no-repeat;
+		}
+		h1{
+			color: #7317cf;
+		
+			width: 700px;
+			padding-left: 10px;
+			font-family: BlinkMacSystemFont;
+		}
+		.sign {
+			color: white;
+			font-size: 10pt;
+			width: 700px;
+			padding-left: 10px;
+			padding-top: 3px;
+			padding-bottom: 3px;
+			margin-right: 0;
+			margin-bottom: 10px;
+			font-family: BlinkMacSystemFont;
+		}
+		.main{
+			font-size: 14pt;
+			width: 700px;
+			list-style: none;
+			margin-left: 0;
+			margin-right: 20px;
+			padding-bottom: 20px;
+			padding-left: 10px;
+			font-family: BlinkMacSystemFont;
+		}
+		.list{
+			padding-top: 20px;
+			color: #4DD0E1;
+			font-family: BlinkMacSystemFont;
+		}
+		.commentCol{
+			font-size: 12pt;
+			background-color: #A7FFEB;
+			width: 700px;
+			padding: 0;
+			color: #00BCD4;
+			font-family: BlinkMacSystemFont;
+		}
+		.comments{
+			font-style: italic;
+			font-size: 12pt;
+			padding-top: 10px;
+			color: #00BCD4;
+			font-family: BlinkMacSystemFont;
+		}
+		.comBlock{
+			width: 700px;
+			height: 300px;
+			frameborder: 0;
+			marginheight: 0;
+			marginwidth: 0;
+		}
+		.main2{
+			background-color: #E0F7FA;
+			font-size: 14pt;
+			width: 700px;
+			list-style: none;
+			margin-left: 0;
+			margin-right: 20px;
+			padding-bottom: 20px;
+			padding-left: 10px;
+			font-family: BlinkMacSystemFont;
+		}
+		</style>
+
+	</head>
+	<body>
+		<h1>The Jordyn Blog</h1>
+		<div class="sign">JordynBlogByJordynHoljes</div>
+		<div class="sign">Co-founded by Connor Holjes</div>
+		<ul class="main"></ul>
+		<a class="commentCol" href = "">comments</a>
+		<ul class="main2"><li class="comments">working on a comments section</li></ul>
+	</body>
+</html>
